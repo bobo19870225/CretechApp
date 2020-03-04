@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="check_username" type="Boolean"/>
+        <variable name="presenter" type="cn.com.cretech.presenter.RegisterPresenter"/>
+        <variable name="registerModel" type="cn.com.cretech.model.RegisterModel"/>
+
+    </data>
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+        <include layout="@layout/title_bar"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_50"
+                android:layout_marginTop="@dimen/dimen_distance_11"
+                android:paddingLeft="@dimen/dimen_distance_29"
+                android:paddingRight="@dimen/dimen_distance_29"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <EditText
+                    android:id="@+id/et_username"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_name"
+                    android:background="@color/white"
+                    android:inputType="text"
+                    android:text="@={registerModel.userName}"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:textColor="@android:color/black" />
+
+            <ImageView
+                    android:id="@+id/iv_exist_user"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="@{() -> presenter.clearUsername()}"
+                    android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <View
+                style="@style/line_style"
+                android:layout_height="@dimen/dimen_distance_11"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_50"
+                android:paddingLeft="@dimen/dimen_distance_29"
+                android:paddingRight="@dimen/dimen_distance_29"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+            <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="@string/hint_phone"
+                    android:background="@color/white"
+                    android:text="@={registerModel.phone}"
+                    android:inputType="phone"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:maxLength="11"
+                    android:textColor="@android:color/black" />
+
+
+            <TextView
+                    android:id="@+id/tv_get_yzm"
+                    android:layout_width="wrap_content"
+                    android:paddingLeft="@dimen/dimen_distance_8"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:textColor="@color/rg_blue"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:onClick="@{() -> presenter.getYZM(registerModel.phone)}"
+                    android:layout_height="@dimen/dimen_distance_36"
+                    android:text="@string/get_yzm"/>
+
+        </LinearLayout>
+        <View
+                style="@style/line_style"/>
+        <EditText
+                android:id="@+id/et_yzm"
+                style="@style/setting_user_message"
+                android:text="@={registerModel.yzm}"
+                android:inputType="number"
+                android:hint="@string/yzm"/>
+        <View
+                style="@style/line_style"/>
+        <EditText
+                android:id="@+id/et_password"
+                style="@style/setting_user_message"
+                android:inputType="textPassword"
+                android:text="@={registerModel.password}"
+                android:hint="@string/user_password"/>
+        <View
+                style="@style/line_style"/>
+        <EditText
+                android:id="@+id/et_affirm_password"
+                style="@style/setting_user_message"
+                android:inputType="textPassword"
+                android:text="@={registerModel.affirmPassword}"
+                android:hint="@string/affirm_password"/>
+        <View
+                style="@style/line_style"/>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/distance_gray">
+            <TextView
+                    android:id="@+id/tv_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_distance_48"
+                    android:layout_marginRight="@dimen/dimen_distance_29"
+                    android:layout_marginLeft="@dimen/dimen_distance_29"
+                    android:background="@drawable/blue7_shape"
+                    android:onClick="@{() -> presenter.onClickRegister(registerModel)}"
+                    android:text="@string/user_register"
+                    android:textSize="@dimen/dimen_size_16"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dimen_distance_72"
+            />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

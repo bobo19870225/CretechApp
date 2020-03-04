@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="dynamicModel"
+                type="cn.com.cretech.bean.LiveBean.DataBean" />
+
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/ll_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_new_dynamic"
+                android:orientation="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_distance_28"
+                    android:layout_marginTop="@dimen/dimen_distance_6"
+                    android:layout_marginRight="@dimen/dimen_distance_10"
+                    android:gravity="center_horizontal">
+
+
+
+                <ImageView
+                        android:id="@+id/iv_school_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_distance_115"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dimen_distance_16"
+                        android:layout_marginRight="@dimen/dimen_distance_18"
+                        android:scaleType="fitXY" />
+
+                <ImageView
+                        android:id="@+id/iv_is_live"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_distance_15"
+                    android:layout_marginRight="@dimen/dimen_distance_23"
+                    android:layout_marginTop="@dimen/dimen_distance_15"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:drawablePadding="@dimen/dimen_distance_6"
+                    android:drawableLeft="@drawable/school_company_name"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_company_name"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:text="@{dynamicModel.company_name}"/>
+
+            <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_distance_20"
+                    android:layout_marginTop="@dimen/dimen_distance_14"
+                    android:layout_marginRight="@dimen/dimen_distance_27"
+                    android:text="@{dynamicModel.theme}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_size_14" />
+
+            <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_distance_20"
+                    android:layout_marginTop="@dimen/dimen_distance_18"
+                    android:layout_marginRight="@dimen/dimen_distance_27"
+                    android:text="@{dynamicModel.content}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_size_13" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dimen_distance_20"
+                    android:gravity="bottom"
+                    android:layout_marginBottom="@dimen/dimen_distance_14"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/tv_tran_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/dimen_distance_8"
+                        android:text="@{dynamicModel.livelocation}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dimen_size_10" />
+
+                <TextView
+                        android:id="@+id/tv_school_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_distance_10"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dimen_size_10" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

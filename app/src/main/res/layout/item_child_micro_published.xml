@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="model" type="cn.com.cretech.bean.ChildMicroPublishedBean.DataBean.SchoolDynamic"/>
+        <variable name="listener" type="cn.com.cretech.widget.ListenerHandlers"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_distance_144">
+
+            <ImageView
+                    android:id="@+id/iv_live_image"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    app:shadowDx = "3dp"
+                    app:shadowDy = "3dp"
+                    app:shadowColor = "#33040000"
+                    android:layout_marginLeft="@dimen/dimen_distance_15"
+                    android:onClick="@{() -> listener.onClickCover(model.company_id,model.column_id) }"
+                    android:layout_height="match_parent" />
+
+        <ImageView
+                android:id="@+id/iv_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_distance_2"
+                android:layout_marginTop="@dimen/dimen_distance_2"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/top_update"
+                android:visibility="@{model.u_status==0?View.GONE : View.VISIBLE}"/>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_net_work"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:visibility="gone"
+              android:gravity="center_horizontal">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/blank_page"
+                android:layout_marginTop="75dp"
+                android:layout_centerHorizontal="true"/>
+
+        <TextView
+                android:id="@+id/tv_net_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/page_gray"
+                android:layout_marginTop="@dimen/dimen_distance_11"
+                android:textSize="@dimen/dimen_size_13"
+                android:text="@string/net_connect_data_empty" />
+
+        <TextView
+                android:id="@+id/tv_click"
+                android:layout_width="110dp"
+                android:layout_height="@dimen/dimen_distance_36"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_distance_80"
+                android:background="@drawable/blue7_shape"
+                android:textSize="@dimen/dimen_size_15"
+                android:visibility="gone"
+                android:text="重试" />
+
+</LinearLayout>

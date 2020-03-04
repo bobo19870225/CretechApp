@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        <FrameLayout
+                android:id="@+id/nav_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                app:labelVisibilityMode="labeled"
+                android:layout_gravity="center_vertical"
+                app:itemIconTint="@drawable/selector_tab_color"
+                app:itemTextColor="@drawable/selector_tab_color"
+                app:menu="@menu/tab"/>
+
+</LinearLayout>
+
+</layout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/iv_wall_fame"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_distance_15"
+                android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</layout>

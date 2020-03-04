@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable name="userMessageModel" type="cn.com.cretech.model.UserMessageModel"/>
+        <variable name="click" type="cn.com.cretech.widget.ListenerHandlers"/>
+        <variable name="presenter" type="cn.com.cretech.presenter.LoginPresenter"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+        <include layout="@layout/title_bar"/>
+
+        <ImageView
+                android:layout_width="@dimen/dimen_distance_96"
+                android:layout_height="@dimen/dimen_distance_96"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_distance_50"
+                android:src="@drawable/icon"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_distance_50">
+            <EditText
+                    android:id="@+id/et_user_name"
+                    style="@style/setting_login_style"
+                    android:inputType="phone"
+                    android:text="@={userMessageModel.userName}"
+                    android:drawableLeft="@drawable/user"
+                    android:paddingLeft="@dimen/dimen_distance_7"
+                    android:drawablePadding="@dimen/dimen_distance_19"
+                    android:hint="@string/phone"/>
+
+            <TextView
+                    android:id="@+id/tv_get_yzm"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/rg_blue"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dimen_distance_29"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:onClick="@{() -> presenter.getYZM(userMessageModel.userName)}"
+                    android:layout_height="wrap_content"
+                    android:text="@string/get_yzm"/>
+
+        </RelativeLayout>
+
+
+        <View
+                style="@style/line_style_black"
+                android:layout_marginRight="@dimen/dimen_distance_29"
+                android:layout_marginLeft="@dimen/dimen_distance_29"/>
+
+        <EditText
+                android:id="@+id/et_password"
+                style="@style/setting_login_style"
+                android:layout_marginTop="@dimen/dimen_distance_16"
+                android:drawablePadding="@dimen/dimen_distance_19"
+                android:paddingLeft="@dimen/dimen_distance_7"
+                android:text="@={userMessageModel.userPassword}"
+                android:drawableLeft="@drawable/lockup"
+                android:inputType="number"
+                android:hint="@string/yzm"/>
+        <View
+                style="@style/line_style_black"
+                android:layout_marginRight="@dimen/dimen_distance_29"
+                android:layout_marginLeft="@dimen/dimen_distance_29"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_distance_23"
+                android:paddingLeft="@dimen/dimen_distance_30"
+                android:paddingRight="@dimen/dimen_distance_30"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/tv_register"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:textColor="@color/red"
+                    android:onClick="@{() -> click.setRegisterListener()}"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:text="@string/user_register"/>
+            <TextView
+                    android:id="@+id/tv_update_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/red"
+                    android:onClick="@{() -> click.setResetPasswordListener()}"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:gravity="right"
+                    android:text="@string/user_reset_password"/>
+        </LinearLayout>
+
+
+        <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_43"
+                android:background="@drawable/login_shape"
+                android:layout_marginRight="@dimen/dimen_distance_29"
+                android:layout_marginLeft="@dimen/dimen_distance_29"
+                android:text="@string/user_login"
+                android:onClick="@{() -> presenter.setLoginButton(userMessageModel)}"
+                android:textSize="@dimen/dimen_size_15"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_distance_57"/>
+
+    </LinearLayout>
+</layout>

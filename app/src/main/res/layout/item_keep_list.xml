@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable name="model" type="cn.com.cretech.bean.KeepListBean.DataBean"/>
+        <variable name="listener" type="cn.com.cretech.widget.ListenerHandlers"/>
+        <variable name="adapter" type="cn.com.cretech.adapter.KeepListAdapter"/>
+
+    </data>
+
+    <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:background="@color/white"
+                  android:paddingTop="@dimen/dimen_distance_10"
+                  android:paddingBottom="@dimen/dimen_distance_10"
+                  android:paddingLeft="@dimen/dimen_distance_15"
+                  android:paddingRight="@dimen/dimen_distance_18">
+
+        <ImageView
+                android:id="@+id/iv_live_image"
+                android:layout_width="@dimen/dimen_distance_80"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_default"/>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/dimen_distance_96"
+                android:layout_marginLeft="@dimen/dimen_distance_7"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                <ImageView
+                        android:layout_width="@dimen/dimen_distance_16"
+                        android:layout_height="@dimen/dimen_distance_16"
+                        android:src="@drawable/school"/>
+                <TextView
+                        android:id="@+id/tv_school"
+                        android:layout_width="0dp"
+                        android:onClick="@{() -> listener.onClickCompanyName(model.company_id ,model.grade)}"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_blue"
+                        android:layout_marginLeft="@dimen/dimen_distance_4"
+                        android:textSize="@dimen/dimen_size_13"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@{model.company_name}"
+                />
+
+                <TextView
+                        android:id="@+id/tv_keep"
+                        android:layout_width="@dimen/dimen_distance_60"
+                        android:layout_height="@dimen/dimen_distance_20"
+                        android:layout_gravity="right"
+                        android:onClick="@{() -> adapter.setCancelKeep(model)}"
+                        android:background="@color/keep_blue"
+                        android:gravity="center"
+                        android:textSize="@dimen/dimen_size_11"
+                        android:textColor="@color/white"
+                        android:text="取消关注"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dimen_distance_8"
+                    android:orientation="horizontal">
+
+
+                <ImageView
+                        android:layout_width="@dimen/dimen_distance_16"
+                        android:layout_height="@dimen/dimen_distance_16"
+                        android:src="@drawable/location"/>
+                <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/dimen_size_12"
+                        android:layout_marginLeft="@dimen/dimen_distance_4"
+                        android:textColor="@color/black"
+                        android:text="@{model.location}" />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <ImageView
+                            android:layout_width="@dimen/dimen_distance_16"
+                            android:layout_height="@dimen/dimen_distance_16"
+                            android:src="@drawable/reming"/>
+                    <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_distance_2"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/dimen_size_10"
+                            android:textColor="@color/text_red" />
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/tv_default_keep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:textColor="@{model.defaults==1? @color/list_keep_red : @color/tab_blue}"
+                        android:paddingLeft="@dimen/dimen_distance_16"
+                        android:paddingRight="@dimen/dimen_distance_16"
+                        android:text="@{model.defaults==1? @string/default_keep : @string/setting_default_keep}"
+                        android:paddingTop="@dimen/dimen_distance_4"
+                        android:onClick="@{() -> adapter.setDefaultKeepSchool(model)}"
+                        android:paddingBottom="@dimen/dimen_distance_4"
+                        android:textSize="@dimen/dimen_size_10"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>

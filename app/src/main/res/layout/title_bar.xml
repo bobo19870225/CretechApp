@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y88" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/title_blue"
+                android:textSize="@dimen/dimen_size_16"
+                android:text="创先泰克教育云"
+                app:titleTextColor="@android:color/white"
+        />
+
+        <TextView
+                android:id="@+id/tv_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="创先泰克教育云"
+                android:textSize="@dimen/dimen_size_16"
+                android:textColor="@android:color/white"
+                android:layout_centerInParent="true"
+        />
+
+
+</RelativeLayout>

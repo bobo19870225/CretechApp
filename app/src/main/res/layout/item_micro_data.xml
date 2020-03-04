@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="microModel" type="cn.com.cretech.bean.ChildMicroPublishedBean.DataBean.SchoolDynamic"/>
+        <variable name="listener" type="cn.com.cretech.widget.ListenerHandlers"/>
+
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <RelativeLayout
+                android:id="@+id/rl_micro_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_distance_325">
+
+        <ImageView
+                android:id="@+id/iv_ultra"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="@{() ->listener.onClickMicroSchool(microModel) }"
+                android:scaleType="fitXY"/>
+
+            <ImageView
+                    android:id="@+id/iv_micro_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen_distance_2"
+                    android:layout_marginTop="@dimen/dimen_distance_2"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/top_update"
+                    android:visibility="@{microModel.u_status==0?View.GONE : View.VISIBLE}"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

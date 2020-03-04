@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="nickname" type="String"/>
+        <variable name="oldPassword" type="String"/>
+        <variable name="newPassword" type="String"/>
+        <variable name="affirmPassword" type="String"/>
+        <variable name="presenter" type="cn.com.cretech.presenter.UpdateUserMessagePresenter"/>
+
+    </data>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:background="@color/distance_gray">
+
+        <include layout="@layout/title_bar"/>
+
+
+        <EditText
+                android:id="@+id/et_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_48"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dimen_distance_16"
+                android:textSize="@dimen/dimen_size_15"
+                android:hint="@string/nickname"
+                android:text="@={nickname}"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/dimen_distance_16"
+                android:paddingRight="@dimen/dimen_distance_16"/>
+        <LinearLayout
+                android:id="@+id/ll_update_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_distance_50"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/dimen_distance_16"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/dimen_distance_16">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/old_password"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dimen_size_15"/>
+                <EditText
+                        android:id="@+id/et_old_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/input_old_password"
+                        android:inputType="textPassword"
+                        android:text="@={oldPassword}"
+                        android:background="@color/white"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="@dimen/dimen_distance_104"
+                        android:textSize="@dimen/dimen_size_15"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_distance_50"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/dimen_distance_16"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dimen_distance_1"
+                    android:paddingRight="@dimen/dimen_distance_16">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/new_password"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dimen_size_15"/>
+                <EditText
+                        android:id="@+id/et_new_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/input_new_password"
+                        android:inputType="textPassword"
+                        android:text="@={newPassword}"
+                        android:background="@color/white"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="104dp"
+                        android:textSize="@dimen/dimen_size_15"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_distance_50"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/dimen_distance_16"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dimen_distance_1"
+                    android:paddingRight="@dimen/dimen_distance_16">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/affirm_password"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dimen_size_15"/>
+                <EditText
+                        android:id="@+id/et_affirm_new_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/input_affirm_password"
+                        android:textColor="@color/black"
+                        android:inputType="textPassword"
+                        android:text="@={affirmPassword}"
+                        android:background="@color/white"
+                        android:layout_marginLeft="104dp"
+                        android:textSize="@dimen/dimen_size_15"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/tv_update_data"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_45"
+                android:background="@drawable/blue7_shape"
+                android:textSize="@dimen/dimen_size_14"
+                android:layout_marginTop="@dimen/dimen_distance_80"
+                android:layout_marginLeft="@dimen/dimen_distance_15"
+                android:layout_marginRight="@dimen/dimen_distance_15"
+                android:onClick="@{() -> presenter.updateNickName(nickname,oldPassword,newPassword,affirmPassword)}"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+        />
+    </LinearLayout>
+
+</layout>

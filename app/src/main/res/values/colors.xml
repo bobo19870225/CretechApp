@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="title_blue">#FF2A61A5</color>
+    <color name="alp3_black">#33000000</color>
+    <color name="tab_blue">#FF0084FF</color>
+    <color name="pager_blue">#FF2A61A5</color>
+    <color name="black">#000000</color>
+    <color name="gray">#FFDDDDDD</color>
+    <color name="text_blue">#195EDD</color>
+    <color name="text_red">#FB1717</color>
+    <color name="current_gray">#9c9c9c</color>
+    <color name="page_gray">#888888</color>
+    <color name="live_blue">#0084FF</color>
+    <color name="current_blue">#FF195EDD</color>
+    <color name="red">#FB1717</color>
+    <color name="no_select_gray">#FF666666</color>
+    <color name="select_blue">#FF0084FF</color>
+    <color name="white">#ffffff</color>
+    <color name="nav_title">#FF2B2A2A</color>
+    <color name="nav_item_color">#FF2B2B2B</color>
+    <color name="distance_gray">#f4f4f4</color>
+    <color name="base_line">#B2B2B2</color>
+    <color name="halving_line">#ffeaeae9</color>
+    <color name="rg_blue">#025EDC</color>
+    <color name="keep_blue">#1756A5</color>
+    <color name="time_gray">#ff888888</color>
+    <color name="tran_blue">#FF235AC0</color>
+    <color name="white4">#44ffffff</color>
+    <color name="keep_red">#FFE91919</color>
+    <color name="list_keep_red">#b93232</color>
+    <color name="blue_company_name">#ff2865a2</color>
+    <color name="bg_wall_fame">#FFF6F2F2</color>
+
+</resources>

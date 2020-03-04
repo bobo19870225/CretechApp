@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <cn.com.cretech.pullToRefresh.PullToRefreshScrollView
+            android:id="@+id/pullRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dimen_distance_15"
+            android:layout_marginRight="@dimen/dimen_distance_15"
+            android:layout_marginBottom="@dimen/dimen_distance_15"
+            android:layout_height="match_parent"/>
+         <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:background="#44000000"
+                android:textSize="@dimen/dimen_size_12"
+                android:gravity="center"
+                android:layout_alignParentBottom="true" />
+
+        <include layout="@layout/net_error_default"/>
+    </RelativeLayout>
+</layout>

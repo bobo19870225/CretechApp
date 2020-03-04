@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="is_login" type="Boolean"/>
+        <variable name="view" type="android.view.View"/>
+        <variable name="listener" type="cn.com.cretech.widget.ListenerHandlers"/>
+        <variable name="presenter" type="cn.com.cretech.presenter.MyPresenter"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <include layout="@layout/title_bar"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:onClick="@{() -> listener.setLoginListener(is_login)}"
+                android:padding="@dimen/dimen_distance_16">
+
+            <cn.com.cretech.widget.CircleImageView
+                    android:id="@+id/circle_image"
+                    android:layout_width="@dimen/dimen_distance_57"
+                    android:layout_height="@dimen/dimen_distance_57"
+                    android:src="@drawable/icon"/>
+
+            <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_login"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="@dimen/dimen_distance_15"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/dimen_size_15"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/next"/>
+
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_10"
+                android:background="@color/distance_gray"/>
+
+
+        <LinearLayout
+                android:id="@+id/ll_keep_list"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_42"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> listener.setKeepList(is_login)}"
+                android:paddingLeft="@dimen/dimen_distance_16"
+                android:paddingRight="@dimen/dimen_distance_16">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/my_dynamic"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="关注列表"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:layout_marginLeft="@dimen/dimen_distance_15"
+                    android:textColor="@color/black"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next"/>
+
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_10"
+                android:background="@color/distance_gray"/>
+
+        <LinearLayout
+                android:id="@+id/ll_about"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_42"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> listener.setAboutWe()}"
+                android:paddingLeft="@dimen/dimen_distance_15"
+                android:paddingRight="@dimen/dimen_distance_15">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/about_women"/>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="关于我们"
+                    android:layout_marginLeft="@dimen/dimen_distance_15"
+                    android:textSize="@dimen/dimen_size_15"
+                    android:textColor="@color/black"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+                android:id="@+id/ll_out_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:background="@color/distance_gray">
+            <TextView
+                    android:id="@+id/tv_out_login"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_distance_29"
+                    android:layout_marginRight="@dimen/dimen_distance_29"
+                    android:layout_height="@dimen/dimen_distance_40"
+                    android:text="@string/out_login"
+                    android:textSize="@dimen/dimen_size_14"
+                    android:onClick="@{() -> presenter.outLogin()}"
+                    android:background="@drawable/out_login_shape"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/dimen_distance_57"
+                    android:textColor="@color/live_blue"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable name="presenter" type="cn.com.cretech.presenter.PersonMessagePresenter"/>
+        <variable name="userDataBean" type="cn.com.cretech.bean.UserDataBean.UserMessage"/>
+
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <include layout="@layout/title_bar"/>
+
+        <LinearLayout
+                android:id="@+id/ll_update_photo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_80"
+                android:orientation="horizontal"
+                android:onClick="@{() -> presenter.onClickPhoto()}"
+                android:paddingLeft="@dimen/dimen_distance_15"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dimen_distance_15">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/photo"
+                    android:textSize="@dimen/dimen_size_15"/>
+
+            <cn.com.cretech.widget.CircleImageView
+                    android:id="@+id/circle_image"
+                    android:layout_width="@dimen/dimen_distance_50"
+                    android:layout_height="@dimen/dimen_distance_50"
+                    android:src="@drawable/icon"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_distance_15"
+                    android:src="@drawable/next" />
+
+        </LinearLayout>
+
+        <View
+                style="@style/line_style"/>
+
+        <LinearLayout
+                android:id="@+id/ll_update_nick"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_50"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> presenter.onClickNickName()}"
+                android:paddingLeft="@dimen/dimen_distance_15"
+                android:paddingRight="@dimen/dimen_distance_15">
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nickname"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_size_15" />
+            <TextView
+                    android:id="@+id/tv_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@{userDataBean.nickname}"
+                    android:textSize="@dimen/dimen_size_15" />
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_distance_15"
+                    android:src="@drawable/next" />
+
+        </LinearLayout>
+        <View
+                style="@style/line_style"/>
+
+        <LinearLayout
+                android:id="@+id/ll_update_username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_50"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_distance_15"
+                android:paddingRight="@dimen/dimen_distance_15">
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_size_15" />
+            <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@{userDataBean.username}"
+                    android:textSize="@dimen/dimen_size_15" />
+
+        </LinearLayout>
+
+        <View
+                style="@style/line_style"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_50"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_distance_15"
+                android:paddingRight="@dimen/dimen_distance_15">
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/phone"
+                    android:textSize="@dimen/dimen_size_15"
+            />
+
+            <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@{userDataBean.phone}"
+                    android:textSize="@dimen/dimen_size_15"
+            />
+
+        </LinearLayout>
+        <View
+                style="@style/line_style"/>
+
+
+        <LinearLayout
+                android:id="@+id/ll_update_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_distance_50"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> presenter.onUpdatePassword()}"
+                android:paddingLeft="@dimen/dimen_distance_15"
+                android:paddingRight="@dimen/dimen_distance_15">
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update_password"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_size_15" />
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/distance_gray"/>
+
+        <include layout="@layout/net_error_default"/>
+
+
+    </LinearLayout>
+
+</layout>

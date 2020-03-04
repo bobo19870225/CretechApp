@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="areaChildModel" type="cn.com.cretech.bean.SchoolPublishedBean.AreaData.ChildBean"/>
+        <variable name="listener" type="cn.com.cretech.widget.ListenerHandlers"/>
+
+    </data>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/tv_nav_school"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dimen_distance_8"
+                android:paddingBottom="@dimen/dimen_distance_8"
+                android:text="@{areaChildModel.class_name}"
+                android:onClick="@{() -> listener.onSchoolNavigation(areaChildModel)}"
+                android:textSize="@dimen/dimen_size_16"
+                android:textColor="@color/nav_item_color"
+                android:gravity="center"
+                android:background="@drawable/nav_school_shape"/>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <data>
+
+              <variable name="isKeep" type="Boolean"/>
+              <variable name="presenter" type="cn.com.cretech.presenter.MicroPresenter"/>
+
+        </data>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_keep">
+
+                <TextView
+                        android:id="@+id/tv_keep"
+                        android:layout_marginTop="@dimen/dimen_distance_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/dimen_size_15"
+                        android:text="@{isKeep ?@string/ok_keep : @string/keep }"
+                        android:drawablePadding="@dimen/dimen_distance_16"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center"
+                        android:onClick="@{() -> presenter.isKeepSchool(isKeep)}"
+                        android:textColor="@{isKeep ?@color/black : @color/keep_red }"
+                        android:drawableLeft="@{isKeep ?@drawable/gray_keep : @drawable/focused_keep }" />
+                <TextView
+                        android:id="@+id/tv_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/share"
+                        android:onClick="@{() -> presenter.setShare()}"
+                        android:textSize="@dimen/dimen_size_15"
+                        android:drawablePadding="@dimen/dimen_distance_16"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:drawableLeft="@drawable/school_share" />
+
+        </LinearLayout>
+
+</layout>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/msgFragment"
+          android:icon="@drawable/home_today_show_selector"
+          android:title="@string/live"/>
+    <item android:id="@+id/liveFragment"
+          android:icon="@drawable/dynamic_selector"
+          android:title="@string/micro_published"/>
+    <item android:id="@+id/dynamicFragment"
+          android:icon="@drawable/message_selector"
+          android:title="@string/school_published"/>
+    <item android:id="@+id/styleFragment"
+         android:icon="@drawable/good_look_selector"
+         android:title="@string/style"/>
+   <item android:id="@+id/myFragment"
+          android:icon="@drawable/my_selector"
+          android:title="我的"/>
+</menu>

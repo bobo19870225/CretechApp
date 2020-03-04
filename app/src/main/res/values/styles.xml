@@ -1,0 +1,70 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/title_blue</item>
+        <item name="colorPrimaryDark">@color/title_blue</item>
+        <item name="colorAccent">@color/title_blue</item>
+    </style>
+    <style name="setting_login_style">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_distance_43</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textSize">@dimen/dimen_size_15</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_distance_29</item>
+        <item name="android:layout_marginRight">@dimen/dimen_distance_29</item>
+
+    </style>
+
+    <style name="line_style_black">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_distance_1</item>
+        <item name="android:background">@color/black</item>
+
+    </style>
+
+    <style name="line_style">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_distance_1</item>
+        <item name="android:background">@color/distance_gray</item>
+
+    </style>
+
+    <style name="my_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item> <!-- 去除边框 -->
+        <item name="android:windowIsFloating">true</item> <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item> <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item> <!-- 自己想要的背景 -->
+        <item name="android:backgroundDimEnabled">true</item> <!-- 背景遮罩层 -->
+    </style>
+
+    <style name="setting_user_message">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_distance_50</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textSize">@dimen/dimen_size_15</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingLeft">@dimen/dimen_distance_29</item>
+        <item name="android:paddingRight">@dimen/dimen_distance_29</item>
+
+    </style>
+
+    <style name="reset_password">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_distance_50</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textSize">@dimen/dimen_size_14</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingLeft">@dimen/dimen_distance_15</item>
+        <item name="android:paddingRight">@dimen/dimen_distance_15</item>
+
+    </style>
+</resources>

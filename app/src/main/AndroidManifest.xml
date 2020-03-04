@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+          package="cn.com.cretech">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission  android:name = "android.permission.GET_TASKS"/>
+
+    <uses-sdk tools:overrideLibrary="com.aliyun.aliyunplayer" />
+    <application
+            android:name=".base.BaseApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/icon_about_us"
+            android:label="@string/app_name"
+            android:networkSecurityConfig="@xml/network_security_config"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+
+        <activity android:name=".activity.WelcomeActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.LoginActivity"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.RegisterActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ResetPasswordActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PersonMessageActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.KeepListActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AboutWeActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.UpdateUserMessageActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CoverActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SchoolNavigationActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DynamicSchoolActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.H5Activity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SchoolStyleDynamicActivity"
+                android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CretechPlayActivity"
+                  android:theme="@style/Theme.AppCompat.NoActionBar"
+                  android:configChanges="orientation|keyboardHidden|screenSize"/>
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.file_provider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths" />
+        </provider>
+
+        <!-- 修改用户信息的广播 -->
+        <receiver android:name=".broad.UserUpdateBroad"
+        android:enabled="true"
+        android:exported="true">
+            <intent-filter>
+                <action android:name="com.user.update"/>
+            </intent-filter>
+
+        </receiver>
+    </application>
+
+</manifest>
